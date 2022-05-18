@@ -1,3 +1,10 @@
-h1 {
-  color: hotpink;
+@import "./node_modules/sass-mq/mq";
+@import "utils/variables";
+@import "utils/reboot";
+@import "components/header";
+
+@include mq($from: tablet) {
+  h1 {
+    color: $theme-black;
+  }
 }

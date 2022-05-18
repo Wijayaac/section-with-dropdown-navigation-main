@@ -25,26 +25,126 @@
 </head>
 
 <body>
-  <h1>Hello</h1>
-  Features
-  Company
-  Careers
-  About
+  <header class="header">
+    <div class="header__wrapper">
+      <picture class="header__logo-wrapper">
+        <img src="images/logo.svg" alt="">
+      </picture>
+      <button class="header__toggle header--mobile" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <!-- <img class="header__toggle-open" src="images/icon-menu.svg" alt=""> -->
+        <!-- <img class="header__toggle-close" src="images/icon-close-menu.svg" alt=""> -->
+      </button>
+      <nav>
+        <ul id="primary-navigation" class="header__primary-nav" data-visible="false">
+          <li>
+            <a href="#" class="header__nav-item header__nav-item--primary">
+              <span>
+                Features
+              </span>
+              <span class="header__nav-toggle" aria-controls="submenu-company" aria-expanded="false">
 
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes,
-  create team rituals, and watch productivity soar.
-
-  Learn more
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+              </span>
+            </a>
+            <ul class="header__submenu-nav" id="submenu-features" data-visible="false">
+              <li>
+                <a href="#" class="header__nav-item header__nav-item--submenu">
+                  <span class="header__nav-icon"></span>
+                  <span>Todo List</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="header__nav-item header__nav-item--submenu">
+                  <span class="header__nav-icon"></span>
+                  <span>Calendar</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="header__nav-item header__nav-item--submenu">
+                  <span class="header__nav-icon"></span>
+                  <span>Reminder</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="header__nav-item header__nav-item--submenu">
+                  <span class="header__nav-icon"></span>
+                  <span>Planning</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="header__nav-item header__nav-item--primary">
+              <span>Company</span>
+              <span class="header__nav-toggle" aria-controls="submenu-company" aria-expanded="false">
+              </span>
+            </a>
+            <ul class="header__submenu-nav" id="submenu-company" data-visible="false">
+              <li>
+                <a href="#" class="header__nav-item header__nav-item--submenu">
+                  <span>History</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="header__nav-item header__nav-item--submenu">
+                  <span>Our Team</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="header__nav-item header__nav-item--submenu">
+                  <span>Blog</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="header__nav-item header__nav-item--primary">
+              <span>
+                Careers
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="header__nav-item header__nav-item--primary">
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="header__nav-item header__nav-item--login">
+              <span>Login</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="header__nav-item header__nav-item--register">
+              <span>Register</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <article class="hero__text">
+        <h1 class="heading heading--h1 hero__heading">
+          Make remote work
+        </h1>
+        <p class="text text--copy hero__copy">
+          Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch
+          productivity soar.
+        </p>
+        <a class="btn btn--cta hero__button">
+          Learn more
+        </a>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
   <script src="app/script.js" type="module"></script>
 </body>
 
