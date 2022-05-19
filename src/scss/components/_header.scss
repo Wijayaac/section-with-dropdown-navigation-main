@@ -39,20 +39,20 @@ body {
 
 /* Primary Header */
 .header {
-  &--mobile {
-    display: block;
-    @include mq($from: desktop) {
-      display: none;
-    }
-  }
   &__wrapper {
     @extend .flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    height: 65px;
+    margin: 0 auto;
+    max-width: 90vw;
   }
   &__logo-wrapper {
     position: relative;
     width: 120px;
+    height: 30px;
+
     img {
       position: absolute;
       top: 0;
@@ -65,7 +65,6 @@ body {
       object-position: center;
     }
   }
-
   &__toggle {
     display: block;
     position: absolute;
@@ -76,21 +75,68 @@ body {
     border: 0;
     width: 2rem;
     aspect-ratio: 1;
-    top: 2rem;
-    right: 2rem;
+    top: 1.5rem;
+    right: 0;
   }
   &__toggle[aria-expanded="true"] {
     background-image: url("../images/icon-close-menu.svg");
   }
   &__primary-nav {
-    background: $theme-tr-black;
+    --gap: 2em;
+
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 30%;
+
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2rem;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+
+    &[data-visible="true"] {
+      transform: translateX(0%);
+    }
+
+    @supports (backdrop-filter: blur(1rem)) {
+      & {
+        background: hsl(0 0% 100% /0.1);
+        backdrop-filter: blur(1rem);
+      }
+    }
+    @include mq($from: desktop) {
+      --gap: clamp(1.5rem, 5vw, 3rem);
+      flex-direction: row;
+      justify-content: space-around;
+      position: static;
+      background: #fff;
+      backdrop-filter: none;
+      height: 70px;
+      transform: translateX(0);
+      padding: 1rem 2rem;
+
+      & a > span[aria-hidden] {
+        display: none;
+      }
+    }
 
     a {
       text-decoration: none;
+      color: $theme-black;
+
       &[aria-hidden="true"] {
         font-weight: $theme-medium;
         margin-right: 0.75em;
       }
+    }
+  }
+  &--mobile {
+    display: block;
+    @include mq($from: desktop) {
+      display: none;
     }
   }
 }
