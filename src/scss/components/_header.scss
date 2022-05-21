@@ -92,4 +92,42 @@
     flex-direction: row;
     color: $theme-gray;
   }
+  &__submenu-nav {
+    transition: $theme-transition;
+    &[data-visible="false"] {
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin-bottom: 0;
+    }
+    &[data-visible="true"] {
+      opacity: 1;
+      visibility: visible;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  &__nav-toggle {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+    img {
+      transition: $theme-transition;
+    }
+    &[aria-expanded="true"] {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+    &[aria-expanded="false"] {
+      img {
+        transform: rotate(0);
+      }
+    }
+  }
 }

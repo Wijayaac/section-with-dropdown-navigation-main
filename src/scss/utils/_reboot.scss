@@ -75,7 +75,7 @@ ul {
   */
 a {
   text-decoration: none;
-  transition: all 400ms, 400ms ease;
+  transition: $theme-transition;
   &:hover,
   &:focus {
     text-decoration: none;
