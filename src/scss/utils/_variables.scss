@@ -1,7 +1,11 @@
 // Colors
-$theme-white: #fff0f7;
-$theme-black: #141414;
+$theme-white: hsl(0, 0%, 98%);
+$theme-black: hsl(0, 0%, 8%);
+$theme-gray: hsl(0, 0%, 41%);
 $theme-tr-black: hsl(0 0% 0% /0.5);
 
 // Font
-$theme-medium: 700;
+$font-family: "Epilogue", sans-serif;
+$font-size: 18px;
+$theme-medium: 500;
+$theme-bold: 700;
