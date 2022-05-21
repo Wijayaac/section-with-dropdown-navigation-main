@@ -69,3 +69,15 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+/*
+    10. Remove underline link
+  */
+a {
+  text-decoration: none;
+  transition: all 400ms, 400ms ease;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
