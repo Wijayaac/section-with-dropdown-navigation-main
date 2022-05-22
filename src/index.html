@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="scss/styles.scss">
 </head>
 
-<body>
+<body class="body">
   <header class="header">
     <div class="header__wrapper">
       <picture class="header__logo-wrapper">
@@ -36,8 +36,8 @@
       <button class="header__toggle header--mobile" aria-controls="primary-navigation" aria-expanded="false">
         <span class="sr-only">Menu</span>
       </button>
-      <nav id="primary-navigation" class="header__primary-nav flex" data-visible="true">
-        <ul>
+      <nav id="primary-navigation" class="header__primary-nav flex" data-visible="false">
+        <ul class="header__menu-wrapper">
           <li>
             <a href="#" class="header__nav-item header__nav-item--primary">
               <span>
@@ -126,7 +126,7 @@
             </a>
           </li>
         </ul>
-        <ul>
+        <ul class="header__menu-wrapper header__menu-wrapper--user">
           <li>
             <a href="#" class="header__nav-item header__nav-item--login">
               <span>Login</span>

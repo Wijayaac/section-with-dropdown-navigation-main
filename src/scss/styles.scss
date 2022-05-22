@@ -10,6 +10,18 @@ body {
   font-family: $font-family;
   overflow-x: hidden;
 }
+.body {
+  transition: $theme-transition;
+  &--overlay {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $theme-tr-black;
+  }
+}
 
 .sr-only {
   border: 0;
