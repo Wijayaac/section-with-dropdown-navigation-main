@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="scss/styles.scss">
 </head>
 
-<body>
+<body class="body">
   <header class="header">
     <div class="header__wrapper">
       <picture class="header__logo-wrapper">
@@ -36,8 +36,8 @@
       <button class="header__toggle header--mobile" aria-controls="primary-navigation" aria-expanded="false">
         <span class="sr-only">Menu</span>
       </button>
-      <nav id="primary-navigation" class="header__primary-nav flex" data-visible="true">
-        <ul>
+      <nav id="primary-navigation" class="header__primary-nav flex" data-visible="false">
+        <ul class="header__menu-wrapper">
           <li>
             <a href="#" class="header__nav-item header__nav-item--primary">
               <span>
@@ -126,14 +126,14 @@
             </a>
           </li>
         </ul>
-        <ul>
+        <ul class="header__menu-wrapper header__menu-wrapper--user">
           <li>
             <a href="#" class="header__nav-item header__nav-item--login">
               <span>Login</span>
             </a>
           </li>
           <li>
-            <a href="#" class="header__nav-item header__nav-item--register">
+            <a href="#" class="btn btn--outline header__nav-item header__nav-item--register">
               <span>Register</span>
             </a>
           </li>
@@ -143,6 +143,12 @@
   </header>
   <main>
     <section class="hero">
+      <div class="hero__img-wrapper">
+        <picture>
+          <source media="(max-width: 991px)" srcset="images/image-hero-mobile.png">
+          <img src="images/image-hero-desktop.png" alt="remote working">
+        </picture>
+      </div>
       <article class="hero__text">
         <h1 class="heading heading--h1 hero__heading">
           Make remote work
@@ -151,7 +157,7 @@
           Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch
           productivity soar.
         </p>
-        <a class="btn btn--cta hero__button">
+        <a class="btn btn--background hero__button">
           Learn more
         </a>
       </article>

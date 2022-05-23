@@ -44,37 +44,31 @@
     background-image: url("../images/icon-close-menu.svg");
   }
   &__primary-nav {
-    --gap: 2em;
+    --gap: 2.5rem;
 
     position: fixed;
     z-index: 1000;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 30%;
+    left: 36%;
 
     flex-direction: column;
-    padding: min(30vh, 10rem) 2rem;
+    padding: 5rem 1.5rem;
 
     transform: translateX(100%);
     transition: transform 0.3s ease-out;
+    background-color: #fff;
 
     &[data-visible="true"] {
       transform: translateX(0%);
     }
 
-    @supports (backdrop-filter: blur(1rem)) {
-      & {
-        background: hsl(0 0% 100% /0.1);
-        backdrop-filter: blur(1rem);
-      }
-    }
     @include mq($from: desktop) {
       --gap: clamp(1.5rem, 5vw, 3rem);
       flex-direction: row;
       justify-content: space-around;
       position: static;
-      background: #fff;
       backdrop-filter: none;
       height: 70px;
       transform: translateX(0);
@@ -91,9 +85,26 @@
     @extend .flex;
     flex-direction: row;
     color: $theme-gray;
+
+    &--register {
+      width: 100%;
+    }
+  }
+  &__menu-wrapper {
+    &:first-child > li:not(:last-child) {
+      margin: 15px 0;
+    }
+
+    &--user {
+      --gap: 1rem;
+      @extend .flex;
+      align-items: center;
+      flex-direction: column;
+    }
   }
   &__submenu-nav {
     transition: $theme-transition;
+    margin-left: 20px;
     &[data-visible="false"] {
       height: 0;
       opacity: 0;
@@ -104,7 +115,10 @@
       opacity: 1;
       visibility: visible;
       margin-top: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+    }
+    & > li:not(:last-child) {
+      margin-bottom: 10px;
     }
   }
   &__nav-toggle {
