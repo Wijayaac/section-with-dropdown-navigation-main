@@ -1,11 +1,28 @@
 .hero {
   margin-top: 20px;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
+
+  &__wrapper {
+    @extend .flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 24px;
+    @include mq($from: desktop) {
+      flex-direction: row;
+      max-width: 90vw;
+    }
+  }
   &__img-wrapper {
     position: relative;
     padding-top: 77.86%;
     margin-bottom: 48px;
     overflow: hidden;
+
+    @include mq($from: desktop) {
+      width: 484px;
+      padding-top: 45%;
+      margin-left: auto;
+    }
 
     img {
       position: absolute;

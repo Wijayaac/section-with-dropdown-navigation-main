@@ -1,0 +1,10 @@
+.partner {
+  &__wrapper {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  &__lists {
+    @extend .flex;
+    justify-content: space-around;
+  }
+}
