@@ -1,23 +1,26 @@
 class HeaderNavigation {
-  init() {
-    this.MobileToggle();
+  constructor() {
+    this.primaryNav = document.querySelector("#primary-navigation");
+    this.navToggle = document.querySelector(".header__toggle.header--mobile");
+    this.bodyElm = document.body;
+    this.windowWidth = window.innerWidth;
+
+    if (this.windowWidth < 992) {
+      this.MobileToggle();
+    }
   }
 
   MobileToggle() {
-    const primaryNav = document.querySelector("#primary-navigation"),
-      navToggle = document.querySelector(".header__toggle.header--mobile"),
-      bodyElm = document.body;
-    console.log(bodyElm);
-    navToggle.addEventListener("click", () => {
-      const visibility = primaryNav.getAttribute("data-visible");
+    this.navToggle.addEventListener("click", () => {
+      let visibility = this.primaryNav.getAttribute("data-visible");
       if (visibility === "false") {
-        primaryNav.setAttribute("data-visible", true);
-        navToggle.setAttribute("aria-expanded", true);
-        bodyElm.classList.toggle("body--overlay");
+        this.primaryNav.setAttribute("data-visible", true);
+        this.navToggle.setAttribute("aria-expanded", true);
+        this.bodyElm.classList.toggle("body--overlay");
       } else {
-        primaryNav.setAttribute("data-visible", false);
-        navToggle.setAttribute("aria-expanded", false);
-        bodyElm.classList.toggle("body--overlay");
+        this.primaryNav.setAttribute("data-visible", false);
+        this.navToggle.setAttribute("aria-expanded", false);
+        this.bodyElm.classList.toggle("body--overlay");
       }
     });
   }

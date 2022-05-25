@@ -1,0 +1,15 @@
+.partner {
+  margin-top: 40px;
+
+  @include mq($from: desktop) {
+    margin-top: 125px;
+  }
+  &__wrapper {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  &__lists {
+    @extend .flex;
+    justify-content: space-around;
+  }
+}

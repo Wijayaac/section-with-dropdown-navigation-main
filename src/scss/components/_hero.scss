@@ -1,11 +1,31 @@
 .hero {
   margin-top: 20px;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
+
+  &__wrapper {
+    @extend .flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 24px;
+    margin: 0 auto;
+
+    @include mq($from: desktop) {
+      flex-direction: row-reverse;
+      max-width: 82vw;
+    }
+  }
   &__img-wrapper {
     position: relative;
     padding-top: 77.86%;
     margin-bottom: 48px;
     overflow: hidden;
+
+    @include mq($from: desktop) {
+      width: 484px;
+      padding-top: 643px;
+      margin-left: auto;
+      margin-bottom: 0;
+    }
 
     img {
       position: absolute;
@@ -23,13 +43,41 @@
     max-width: 90vw;
     margin: 0 auto;
     text-align: center;
+
+    @include mq($from: desktop) {
+      max-width: 100%;
+      margin: 0 0 0 40px;
+      padding-top: 50px;
+      text-align: left;
+    }
   }
   &__heading {
     color: $theme-black;
     margin-bottom: 24px;
+
+    @include mq($from: desktop) {
+      margin-bottom: 60px;
+    }
+    &--mobile {
+      display: block;
+
+      @include mq($from: desktop) {
+        display: none;
+      }
+    }
+    &--desktop {
+      display: none;
+      @include mq($from: desktop) {
+        display: block;
+      }
+    }
   }
   &__copy {
     margin-bottom: 32px;
+    @include mq($from: desktop) {
+      max-width: 42ch;
+      margin-bottom: 75px;
+    }
   }
   &__button {
     color: $theme-white;
@@ -40,6 +88,10 @@
   &--h1 {
     font-size: 34px;
     line-height: 120%;
+
+    @include mq($from: desktop) {
+      font-size: 68px;
+    }
   }
 }
 .btn {
