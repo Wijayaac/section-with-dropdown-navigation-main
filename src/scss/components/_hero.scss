@@ -22,8 +22,9 @@
 
     @include mq($from: desktop) {
       width: 484px;
-      padding-top: 45%;
+      padding-top: 643px;
       margin-left: auto;
+      margin-bottom: 0;
     }
 
     img {
@@ -45,16 +46,38 @@
 
     @include mq($from: desktop) {
       max-width: 100%;
-      margin: 0 0 0 35px;
+      margin: 0 0 0 40px;
+      padding-top: 50px;
       text-align: left;
     }
   }
   &__heading {
     color: $theme-black;
     margin-bottom: 24px;
+
+    @include mq($from: desktop) {
+      margin-bottom: 60px;
+    }
+    &--mobile {
+      display: block;
+
+      @include mq($from: desktop) {
+        display: none;
+      }
+    }
+    &--desktop {
+      display: none;
+      @include mq($from: desktop) {
+        display: block;
+      }
+    }
   }
   &__copy {
     margin-bottom: 32px;
+    @include mq($from: desktop) {
+      max-width: 42ch;
+      margin-bottom: 75px;
+    }
   }
   &__button {
     color: $theme-white;
@@ -65,6 +88,10 @@
   &--h1 {
     font-size: 34px;
     line-height: 120%;
+
+    @include mq($from: desktop) {
+      font-size: 68px;
+    }
   }
 }
 .btn {
