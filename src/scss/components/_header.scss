@@ -126,21 +126,42 @@
     &--register {
       width: 100%;
     }
+    @include mq($from: desktop) {
+      &--submenu {
+        justify-content: flex-start;
+      }
+    }
   }
   &__submenu-nav {
     transition: $theme-transition;
     margin-left: 20px;
+
+    @include mq($from: desktop) {
+      margin-left: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
     &[data-visible="false"] {
       height: 0;
       opacity: 0;
       visibility: hidden;
       margin-bottom: 0;
+
+      @include mq($from: desktop) {
+        margin-top: 0;
+      }
     }
     &[data-visible="true"] {
       opacity: 1;
       visibility: visible;
       margin-top: 20px;
-      margin-bottom: 20px;
+      @include mq($from: desktop) {
+        background-color: $theme-white;
+        margin-top: 0;
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
     }
     & > li:not(:last-child) {
       margin-bottom: 10px;
