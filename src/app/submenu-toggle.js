@@ -11,12 +11,15 @@ class SubmenuToggle {
     }
   }
   openSubmenu() {
-    this.submenuToggles.forEach((elm) => {
-      elm.addEventListener("click", (e) => {
-        e.preventDefault();
+    this.menuElms.forEach((elm) => {
+      let submenuToggle = elm.querySelector(".header__nav-toggle");
+      if (submenuToggle) {
+        elm.addEventListener("click", (e) => {
+          e.preventDefault();
 
-        this.toggling(elm);
-      });
+          this.toggling(elm);
+        });
+      }
     });
   }
 
@@ -45,20 +48,28 @@ class SubmenuToggle {
       submenuChilds = submenuWrapper.querySelectorAll(
         ".header__nav-item--submenu"
       ),
-      totalHeight = 0;
+      totalHeight = 0,
+      totalChild = 0;
 
     submenuChilds.forEach((elm) => {
       totalHeight += elm.getBoundingClientRect().height;
+      totalChild++;
     });
-    totalHeight += 35;
+    if (this.windowWidth > 992 && totalChild > 3) {
+      totalHeight += 65;
+    } else {
+      totalHeight += 35;
+    }
 
     if (submenuWrapper.getAttribute("data-visible") == "false") {
       submenuWrapper.setAttribute("data-visible", true);
-      elm.setAttribute("aria-expanded", true);
+      // elm.setAttribute("aria-expanded", true);
+      submenuToggle.setAttribute("aria-expanded", true);
       submenuWrapper.style.height = `${totalHeight}px`;
     } else {
       submenuWrapper.setAttribute("data-visible", false);
-      elm.setAttribute("aria-expanded", false);
+      // elm.setAttribute("aria-expanded", false);
+      submenuToggle.setAttribute("aria-expanded", false);
       submenuWrapper.style.height = 0;
     }
   }

@@ -1,4 +1,3 @@
-/* Primary Header */
 .header {
   &__wrapper {
     position: relative;
@@ -12,7 +11,7 @@
     @include mq($from: desktop) {
       justify-content: flex-start;
       height: 80px;
-      max-width: 95vw;
+      max-width: 1368px;
     }
   }
   &__logo-wrapper {
@@ -96,7 +95,6 @@
     @include mq($from: desktop) {
       flex-direction: row;
     }
-
     &:first-child > li:not(:last-child) {
       margin: 15px 0;
       @include mq($from: desktop) {
@@ -114,30 +112,38 @@
       align-items: center;
     }
   }
-  &__nav-item {
-    --gap: 1rem;
-    @extend .flex;
-    flex-direction: row;
-    color: $theme-gray;
-    @include mq($from: desktop) {
-      --gap: 0.25rem;
-      justify-content: flex-end;
+  &__nav {
+    &-item {
+      --gap: 1rem;
+      @extend .flex-inline;
+      flex-direction: row;
+      color: $theme-gray;
+      @include mq($from: desktop) {
+        --gap: 0.25rem;
+        justify-content: flex-end;
+      }
     }
-    &--register {
+    &-item--register {
       width: 100%;
     }
-    @include mq($from: desktop) {
-      &--submenu {
+    &-item--submenu {
+      align-items: center;
+      @include mq($from: desktop) {
         justify-content: flex-start;
       }
     }
+    &-item--submenu > &-icon {
+      margin-right: 10px;
+    }
   }
   &__submenu-nav {
+    position: relative;
     transition: $theme-transition;
     margin-left: 20px;
 
     @include mq($from: desktop) {
-      margin-left: 0;
+      position: absolute;
+      margin-left: -20px;
       padding-left: 20px;
       padding-right: 20px;
     }
@@ -160,7 +166,9 @@
         background-color: $theme-white;
         margin-top: 0;
         padding-top: 10px;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 20px hsl(0deg 0% 0% / 30%);
       }
     }
     & > li:not(:last-child) {
