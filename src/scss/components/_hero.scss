@@ -11,7 +11,7 @@
 
     @include mq($from: desktop) {
       flex-direction: row-reverse;
-      max-width: 82vw;
+      max-width: 1140px;
     }
   }
   &__img-wrapper {

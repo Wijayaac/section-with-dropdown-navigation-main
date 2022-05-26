@@ -40,6 +40,9 @@ body {
   display: flex;
   gap: var(--gap, 1rem);
 }
+.flex-inline {
+  display: inline-flex;
+}
 .text-white {
   color: var(--white);
 }
